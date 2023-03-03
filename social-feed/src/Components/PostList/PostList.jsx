@@ -6,11 +6,12 @@
 // its own Post component.
 import Post from "../Post/Post";
 
-const PostList = (props) => {
+const PostList = ({entries}) => {
+   let entriesReversed = [...entries].reverse()
     return ( 
-        <div>
-            <Post />
-        </div>
+        <ul>
+           {entriesReversed.map(entry => <Post entry= {entry} key= {entry.id}/> )}
+        </ul>
      );
 }
  
